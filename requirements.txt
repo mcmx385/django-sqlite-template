@@ -1,0 +1,4 @@
+virtualenv
+Django
+django-debug-toolbar
+colorama
