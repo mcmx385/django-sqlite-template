@@ -7,6 +7,7 @@ from django.core import serializers
 
 # Create your views here.
 
+
 def parse_queryobj(obj):
     return json.loads(serializers.serialize('json', [obj, ]))[0]['fields']
 
@@ -40,7 +41,7 @@ def search_post(request):
         if not post:
             raise ValueError('No post with such title')
 
-        post = json.loads(serializers.serialize('json',[post,]))
+        post = json.loads(serializers.serialize('json', [post, ]))
         post = post[0]['fields']
 
         return JsonResponse({
